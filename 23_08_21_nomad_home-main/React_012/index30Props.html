@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.22.5/babel.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script type="text/babel">
+      function Btn({banana, changeValue5}) {
+        return <button 
+                onClick={changeValue5}
+                style={{backgroundColor: "tomato",color:"blue",padding:"10px 20px",
+                fontSize:  20,
+                }}>
+                {banana}</button>;
+      }
+      function ConfirmBtn() {
+        return <button>Confirm</button>
+      }
+        function App() {
+          const [value, setValue] = React.useState("Save Changes");
+          const changeValue = () => setValue("Revert Changes");
+          return (
+            <div>
+              < Btn banana={value} changeValue5={changeValue}/>
+              < Btn banana="Continue" />
+            </div>
+          );
+        }
+        const root = document.getElementById("root");
+        const rootContainer = ReactDOM.createRoot(root);
+        rootContainer.render(<App />);
+    </script>
+</html>

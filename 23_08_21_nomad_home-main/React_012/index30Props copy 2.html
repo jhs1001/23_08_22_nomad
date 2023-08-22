@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.22.5/babel.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script type="text/babel">
+      function SaveBtn() {
+        return <button style={{backgroundColor: "tomato",color:"blue",padding:"10px 20px"}}>Save Changes</button>;
+      }
+      function ConfirmBtn() {
+        return <button>Confirm</button>
+      }
+        function App() {
+          return (
+            <div>
+              <SaveBtn />
+              <ConfirmBtn />
+            </div>
+          );
+        }
+        const root = document.getElementById("root");
+        const rootContainer = ReactDOM.createRoot(root);
+        rootContainer.render(<App />);
+    </script>
+</html>
